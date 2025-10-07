@@ -1,32 +1,72 @@
-# SolidStart
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+````markdown
+# Solid Realtime Voting App 🗳️
 
-## Creating a project
+A **live poll / voting app** built with **SolidStart** and **Supabase Realtime**.  
+Votes are updated instantly for all users — no backend required!
+
+---
+
+## Features
+
+- Multiple poll options
+- Realtime vote count and dynamic percentage bars
+- Fully frontend-powered using Supabase Realtime
+
+---
+
+## Tech Stack
+
+- **Frontend:** SolidStart (Solid.js framework)  
+- **Realtime & Database:** Supabase (PostgreSQL + Realtime)  
+- **Styling:** TailwindCSS (optional)  
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
-# create a new project in the current directory
-npm init solid@latest
+git clone https://github.com/NipunSGeeTH/realtime-voting-app
+cd realtime-voting-app
+````
 
-# create a new project in my-app
-npm init solid@latest my-app
+### 2. Install dependencies
+
+```bash
+npm install
 ```
 
-## Developing
+### 3. Set up environment variables
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Create a `.env` file in the root:
+
+```
+VITE_SUPABASE_URL=YOUR_SUPABASE_PROJECT_URL
+VITE_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+### 4. Run the app locally
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open your browser at `http://localhost:3000` and see **realtime updates** when voting.
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+---
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+## Database Setup
 
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+Run the SQL in `database.sql` to create the tables and sample data.
+Make sure **Realtime** is enabled for the `poll_options` table in Supabase.
+
+---
+
+## How It Works
+
+* Frontend subscribes to **Supabase Realtime** events on `poll_options`
+* Voting updates the table → Supabase pushes the change → UI updates instantly
+
+---
