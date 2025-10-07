@@ -1,9 +1,11 @@
 
-````markdown
 # Solid Realtime Voting App 🗳️
 
 A **live poll / voting app** built with **SolidStart** and **Supabase Realtime**.  
 Votes are updated instantly for all users — no backend required!
+
+<img width="1884" height="1006" alt="Screenshot From 2025-10-07 14-17-16" src="https://github.com/user-attachments/assets/0b71354f-88d7-4fe0-9807-6b13cb68940d" />
+
 
 ---
 
